@@ -105,8 +105,6 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
-                Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_LONG).show();
-
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(lectures[position].url));
                 startActivity(browserIntent);
             }
