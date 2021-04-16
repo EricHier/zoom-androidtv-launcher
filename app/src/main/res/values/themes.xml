@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.ZoomLauncher" parent="@style/Theme.Leanback" />
+</resources>
