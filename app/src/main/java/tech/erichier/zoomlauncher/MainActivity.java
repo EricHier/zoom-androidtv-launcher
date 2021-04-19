@@ -26,9 +26,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/*
- * Main Activity class that loads {@link MainFragment}.
- */
 public class MainActivity extends Activity {
 
     @Override
