@@ -28,6 +28,22 @@
             android:layout_height="wrap_content"
             android:text="@string/force_quit_zoom" />
 
+        <Button
+            android:id="@+id/refresh"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/refresh" />
+
+        <EditText
+            android:id="@+id/url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/zoomy_url"
+            android:inputType="textUri|none" />
+
     </LinearLayout>
 
     <ListView
@@ -35,8 +51,21 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusableInTouchMode="true">
+        android:visibility="gone"
+        android:focusableInTouchMode="true"></ListView>
 
-    </ListView>
+    <LinearLayout
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

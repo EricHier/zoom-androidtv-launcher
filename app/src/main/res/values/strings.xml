@@ -18,4 +18,6 @@
     <string name="dismiss_error">Dismiss</string>
     <string name="open_zoom">Open Zoom</string>
     <string name="force_quit_zoom">Force Quit Zoom</string>
+    <string name="refresh">Refresh</string>
+    <string name="zoomy_url">Zoomy URL</string>
 </resources>
