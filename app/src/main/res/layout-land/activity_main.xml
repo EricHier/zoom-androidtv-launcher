@@ -35,24 +35,23 @@
             android:layout_height="wrap_content"
             android:text="@string/refresh" />
 
-    </LinearLayout>
+        <EditText
+            android:id="@+id/url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/zoomy_url"
+            android:inputType="textUri|none" />
 
-    <EditText
-        android:id="@+id/url"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="10dp"
-        android:hint="@string/zoomy_url"
-        android:inputType="textUri|none" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:visibility="gone"
-        android:focusableInTouchMode="true"></ListView>
+        android:focusableInTouchMode="true"
+        android:visibility="gone"></ListView>
 
     <LinearLayout
         android:id="@+id/spinner"
