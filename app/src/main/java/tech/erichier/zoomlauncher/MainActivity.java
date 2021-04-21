@@ -15,7 +15,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -35,7 +34,7 @@ import java.util.List;
 public class MainActivity extends Activity {
 
     static LinearLayout spinner;
-    static ListView listview;
+    static CustomListView listview;
     final String SHARED_PREFERENCES = "general";
     SharedPreferences sharedPreferences;
 
@@ -44,12 +43,20 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button zoom = findViewById(R.id.open);
+        final Button open = findViewById(R.id.open);
         final Button close = findViewById(R.id.close);
         final Button refresh = findViewById(R.id.refresh);
 
         spinner = findViewById(R.id.spinner);
         listview = findViewById(R.id.listview);
+
+        listview.setOnKeyDownListener(new CustomOnKeyDownListener() {
+            @Override
+            public void onKeyDown(KeyEvent keyEvent) {
+                if (keyEvent.getKeyCode() == KeyEvent.KEYCODE_DPAD_UP && listview.getSelectedItemPosition() == 0)
+                    open.requestFocus();
+            }
+        });
 
         // load default shared preferences
         sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
@@ -98,11 +105,11 @@ public class MainActivity extends Activity {
             }
         });
 
-        // launch zoom on button click
-        zoom.setOnClickListener(new View.OnClickListener() {
+        // launch open on button click
+        open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("us.zoom.videomeetings");
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("us.open.videomeetings");
                 if (launchIntent != null)
                     startActivity(launchIntent);
                 else
@@ -113,7 +120,7 @@ public class MainActivity extends Activity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rwth.zoom.us/j/93496606108"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rwth.open.us/j/93496606108"));
                 startActivity(browserIntent);
             }
         });

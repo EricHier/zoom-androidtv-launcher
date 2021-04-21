@@ -45,13 +45,13 @@
 
     </LinearLayout>
 
-    <ListView
+    <tech.erichier.zoomlauncher.CustomListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:focusableInTouchMode="true"
-        android:visibility="gone"></ListView>
+        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/spinner"

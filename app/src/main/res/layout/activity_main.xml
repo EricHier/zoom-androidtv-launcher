@@ -46,13 +46,13 @@
         android:hint="@string/zoomy_url"
         android:inputType="textUri|none" />
 
-    <ListView
+    <tech.erichier.zoomlauncher.CustomListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:visibility="gone"
-        android:focusableInTouchMode="true"></ListView>
+        android:focusableInTouchMode="true" />
 
     <LinearLayout
         android:id="@+id/spinner"
