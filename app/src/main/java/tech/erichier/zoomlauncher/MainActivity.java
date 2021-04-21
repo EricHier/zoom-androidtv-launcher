@@ -109,7 +109,7 @@ public class MainActivity extends Activity {
         open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("us.open.videomeetings");
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("us.zoom.videomeetings");
                 if (launchIntent != null)
                     startActivity(launchIntent);
                 else
@@ -120,7 +120,7 @@ public class MainActivity extends Activity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rwth.open.us/j/93496606108"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rwth.zoom.us/j/93496606108"));
                 startActivity(browserIntent);
             }
         });
