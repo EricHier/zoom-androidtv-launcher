@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
 
     static LinearLayout spinner;
     static CustomListView listview;
+    static NetworkOpener networkOpener;
     final String SHARED_PREFERENCES = "general";
     SharedPreferences sharedPreferences;
 
@@ -127,6 +128,14 @@ public class MainActivity extends Activity {
 
         // load lectures on launch
         loadLectures();
+
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                MainActivity.networkOpener = new NetworkOpener(MainActivity.this);
+            }
+        });
+        t.start();
     }
 
     void loadLectures() {
